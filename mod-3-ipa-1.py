@@ -264,4 +264,7 @@ def scytale_decipher(message, shift):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    return encrypt(len(message) // shift, message)
+    result = ""
+    for i in range(len(message)):
+        result += message[i//(len(message)//shift) + (i%(len(message)//shift))*shift]
+    return result
